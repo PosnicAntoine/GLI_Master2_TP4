@@ -1,0 +1,164 @@
+
+
+.App {
+  text-align: center;
+  background-color: #1d2023; 
+
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40px;
+}
+
+.App-header {
+  background-color: #222;
+  padding: 0px;
+  color: white;
+}
+
+.App-title {
+  font-size: .75em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.tableWeekEnd {
+  background-color: #232222; 
+
+}
+
+.topFilter {
+  background-color: #6c6e70; 
+  padding: 10px;
+  font-size: .75em;
+  color: white;
+}
+
+select{
+  width: 100px; 
+  margin-left: 10px;
+  background-color: #232222;
+  border: 0px solid;
+  color: white;
+  height: 20px;
+
+}
+
+.costTable{
+  align: center;
+  color: white;
+  table-layout: fixed;
+  width: 95%;
+  margin: 10px;
+}
+
+.costElementTitle{
+  padding: 8px;
+  text-align: left;
+
+}
+
+.costElementPaidBy{
+  padding: 10px;
+  text-align: center;
+}
+
+.costElementPrice{
+  padding: 8px;
+  text-align: right;
+}
+
+.paidByText{
+  display: inline;
+  font-size: 8px;
+}
+
+.Footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0px;
+}
+
+.AdderCost{
+  width: 30px;
+}
+
+
+.AdderCostElement{
+  background-color:  #6c6e70; 
+}
+
+.inputAdder{
+  width: 35%;
+  border-radius: 2%;
+}
+
+.inputAdderPrice{
+  width: 40px;
+  border-radius: 10%;
+
+}
+
+.buttonAdder{
+  margin-left: 10px;
+  background-color: #232222;
+  width: 22px;
+  height: 22px;
+  border: 0px solid;
+  color: white;
+  border-radius: 50%;
+  font-weight : bold;
+
+
+}
+
+::placeholder {
+  color:  #696972;
+  font-size: 1em;
+}
+
+input{
+  background-color: #232222;
+  border: 0px solid;
+  margin : 5px;
+  color: white;
+  height: 20px;
+}
+
+
+.TotalCost{
+  width: 100%;
+  background-color: #b1b2bc;
+  margin: 0px;
+
+}
+
+.totalText{
+  text-align: right;
+  margin:0px;
+  margin-right:1px;
+  padding-top: 5px;
+  margin-bottom: 2px;
+  color : #696972;
+  font-weight: bold;
+  font-size: 12px;
+
+}
+.totalValue{
+  text-align: right;
+  margin:0px;
+  margin-top: 2px;
+  margin-right: 10px;
+  color: #171719;
+  font-weight: bold;
+
+}
