@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { updateFilter } from './redux/actions'
 
 
 class TopFilter extends React.Component 
@@ -32,4 +34,18 @@ class TopFilter extends React.Component
 	}
 }
 
-export default TopFilter;
+const mapStateToProps = (state) => {
+	return {}
+}
+const mapDispatchToProps = (dispatch) => {
+	return {
+		filter: (value) => {
+			dispatch(updateFilter(value))
+		}
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(TopFilter);

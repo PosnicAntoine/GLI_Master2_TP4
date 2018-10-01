@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TopFilter from "./TopFilter";
 import MainTable from "./MainTable";
 import Footer from "./Footer";
+import { connect } from 'react-redux'
 
 
 class TableWeekEnd extends React.Component
@@ -10,16 +11,11 @@ class TableWeekEnd extends React.Component
 	{
 		super(props);
 		this.state = {
-			filter: "",
 			users: ['Amine', 'Julie', 'Kévin'],
 			costs: [{ paidBy: 'Amine', title: 'Beer', price: 15 },
 					{ paidBy: 'Julie', title: 'Lulz', price: 154 },
 					{ paidBy: 'Kévin', title: 'Keks', price: 150 }]
 		}
-	}
-
-	filter = (user) =>{
-		this.setState({filter: user});
 	}
 
 	adder = (what, who, how) => {
@@ -37,12 +33,21 @@ class TableWeekEnd extends React.Component
 	{
 		return (
 			<div className = "tableWeekEnd">
-				<TopFilter users={this.state.users} filter={this.filter}/>
-				<MainTable costs={this.state.costs} filter={this.state.filter}/>
+				<TopFilter users={this.state.users}/>
+				<MainTable costs={this.state.costs} filter={this.props.filter}/>
 				<Footer costs={this.state.costs} adder={this.adder}/>
 			</div>
 		)
 	}
 }
+const mapStateToProps = (state) => {
+	return { filter: state.filter }
+}
+const mapDispatchToProps = (dispatch) => {
+	return {}
+}
 
-export default TableWeekEnd;
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(TableWeekEnd);
