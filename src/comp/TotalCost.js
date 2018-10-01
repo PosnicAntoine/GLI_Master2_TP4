@@ -9,7 +9,7 @@ class TotalCost extends React.Component
 		let total = 0;
 		for (let cost of this.props.costs)
 		{
-			total = total + cost.price;
+			total = total + parseInt(cost.price);
 		}
 		return (
 			<div className = "TotalCost">
