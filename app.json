@@ -1,0 +1,16 @@
+{
+  "name": "GLI_Master2_TP4",
+  "description": "heroku setup",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
