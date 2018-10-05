@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { adderCost } from './redux/actions'
 
 
 class AdderCostElement extends React.Component 
@@ -24,7 +26,10 @@ class AdderCostElement extends React.Component
 		if(this.state.adderWhat !== "" &&
 			this.state.adderWho !== "" &&
 			this.state.adderHow !== -1){
-			this.props.adder(this.state.adderWhat,
+//			this.props.adder(this.state.adderWhat,
+//				this.state.adderWho,
+//				this.state.adderHow);
+			this.props.costs(this.state.adderWhat,
 				this.state.adderWho,
 				this.state.adderHow);
 		}
@@ -54,4 +59,19 @@ class AdderCostElement extends React.Component
 	}
 }
 
-export default AdderCostElement;
+
+const mapStateToProps = (state) => {
+	return {}
+}
+const mapDispatchToProps = (dispatch) => {
+	return {
+		costs: (what, who, how) => {
+			dispatch(adderCost(what, who, how))
+		}
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(AdderCostElement);

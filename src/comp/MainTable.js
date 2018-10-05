@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class MainTable extends React.Component 
 {
@@ -29,4 +30,18 @@ class MainTable extends React.Component
 	}
 }
 
-export default MainTable;
+
+const mapStateToProps = (state) => {
+	return {
+		filter: state.filter,
+		costs: state.costs
+	}
+}
+const mapDispatchToProps = (dispatch) => {
+	return {}
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+) (MainTable);

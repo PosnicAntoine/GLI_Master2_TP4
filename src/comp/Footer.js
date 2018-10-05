@@ -10,8 +10,8 @@ class Footer extends React.Component
 	{
 		return (
 			<div className = "Footer">
-				<AdderCostElement adder={this.props.adder}/>
-				<TotalCost costs={this.props.costs}/>
+				<AdderCostElement /*adder={this.props.adder}*//>
+				<TotalCost /*costs={this.props.costs}*//>
 			</div>
 		)
 	}

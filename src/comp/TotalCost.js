@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 
 class TotalCost extends React.Component 
@@ -13,11 +14,23 @@ class TotalCost extends React.Component
 		}
 		return (
 			<div className = "TotalCost">
-				<p className="totalText">TOTAL EXPENSES</p>
+				<p className="totalText">TOTAL OF ALL EXPENSES</p>
 				<p className="totalValue">{total} €</p>
 			</div>
 		)
 	}
 }
+const mapStateToProps = (state) => {
+	return { 
+		filter: state.filter,
+		costs: state.costs
+	 }
+}
+const mapDispatchToProps = (dispatch) => {
+	return {}
+}
 
-export default TotalCost;
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(TotalCost);

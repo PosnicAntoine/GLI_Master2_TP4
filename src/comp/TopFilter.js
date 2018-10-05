@@ -35,7 +35,9 @@ class TopFilter extends React.Component
 }
 
 const mapStateToProps = (state) => {
-	return {}
+	return {
+		users : state.users
+	}
 }
 const mapDispatchToProps = (dispatch) => {
 	return {
