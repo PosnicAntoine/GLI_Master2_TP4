@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { adderCost } from './redux/actions'
+import { adderCost, adderUser } from './redux/actions'
 
 
 class AdderCostElement extends React.Component 
@@ -25,13 +25,18 @@ class AdderCostElement extends React.Component
 		console.log("been clicked!");
 		if(this.state.adderWhat !== "" &&
 			this.state.adderWho !== "" &&
-			this.state.adderHow !== -1){
+			this.state.adderHow !== -1)
+		{
 //			this.props.adder(this.state.adderWhat,
 //				this.state.adderWho,
 //				this.state.adderHow);
-			this.props.costs(this.state.adderWhat,
+			this.props.addCost(this.state.adderWhat,
 				this.state.adderWho,
 				this.state.adderHow);
+			if(!this.props.users.includes(this.state.adderWho))
+			{
+				this.props.addUser(this.state.adderWho);
+			}
 		}
 	}
 
@@ -61,12 +66,17 @@ class AdderCostElement extends React.Component
 
 
 const mapStateToProps = (state) => {
-	return {}
+	return {
+		users : state.users
+	}
 }
 const mapDispatchToProps = (dispatch) => {
 	return {
-		costs: (what, who, how) => {
+		addCost: (what, who, how) => {
 			dispatch(adderCost(what, who, how))
+		},
+		addUser: (who) => {
+			dispatch(adderUser(who))
 		}
 	}
 }

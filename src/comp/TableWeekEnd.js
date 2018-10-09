@@ -45,18 +45,5 @@ class TableWeekEnd extends React.Component
 		)
 	}
 }
-const mapStateToProps = (state) => {
-	return { 
-		filter: state.filter,
-		users: state.users,
-		costs: state.costs
-	 }
-}
-const mapDispatchToProps = (dispatch) => {
-	return {}
-}
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(TableWeekEnd);
+export default TableWeekEnd;
